@@ -1,0 +1,21 @@
+﻿@page "/"
+
+@using Microsoft.Extensions.Localization
+@inherits PageViewModelInjector<HomePageViewModel>
+
+@inject IStringLocalizer<App> Loc
+
+<PageRenderView State="@ViewModel.PageState">
+	<Loading>
+		<h1> @Loc.GetString("Loading_title_demo") </h1>
+	</Loading>
+	
+	<Loaded>
+		<h1> @Loc.GetString("Loaded_title_demo") </h1>
+	</Loaded>
+
+	<Error>
+		<h1> @Loc.GetString("Error_title_demo") </h1>
+	</Error>
+
+</PageRenderView>
