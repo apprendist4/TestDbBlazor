@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 
 using Catalog.Architecture.Services;
+using Catalog.Infrastructure;
 
 namespace Catalog
 {
@@ -26,8 +27,6 @@ namespace Catalog
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
-            var culture = new CultureInfo("en-US");
-            CultureInfo.DefaultThreadCurrentCulture = culture;
             var app = builder.Build();
 
             await builder.Build().RunAsync();
